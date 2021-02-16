@@ -37,7 +37,7 @@ Node.js, mysql, 기타 등등으로 '김과외'같은 과외플랫폼을 만들�
 
 draw.io 를 이용해 사용자 흐름도를 그렸습니다.
 
-![사용자 흐름도](https://github.com/HalJjaGi/haljjagi.github.io/blob/master/assets/img/tutor-platform/1.png)
+![사용자 흐름도](https://haljjagi.github.io/assets/img/tutor-platform/1.png)
 
 ### 데이터베이스는 어떨까
 
