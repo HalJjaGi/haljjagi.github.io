@@ -69,7 +69,7 @@ draw.io 를 이용해 사용자 흐름도를 그렸습니다.
 
 위에서 정리한 내용을 바탕으로 데이터베이스를 만들었습니다.
 
-```sql
+```mysql
 CREATE TABLE `account` (
   `account_id` INT NOT NULL,
   `age` INT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE `account` (
   PRIMARY KEY (`account_id`));
 ```
 
-```sql
+```mysql
 CREATE TABLE `request` (
   `request_id` INT NOT NULL,
   `tutee_id` INT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE `request` (
   PRIMARY KEY (`request_id`));
 ```
 
-```sql
+```mysql
 CREATE TABLE `introduce` (
   `introduce_id` INT NOT NULL,
   `tutor_id` INT NULL,
@@ -102,7 +102,7 @@ CREATE TABLE `introduce` (
   PRIMARY KEY (`introduce_id`));
 ```
 
-```sql
+```mysql
 CREATE TABLE `review` (
   `review_id` INT NOT NULL,
   `tutee_id` INT NULL,
@@ -113,7 +113,7 @@ CREATE TABLE `review` (
   PRIMARY KEY (`review_id`));
 ```
 
-```sql
+```mysql
 CREATE TABLE `log` (
   `log_id` INT NOT NULL,
   `tutee_id` INT NULL,
@@ -124,7 +124,7 @@ CREATE TABLE `log` (
   PRIMARY KEY (`log_id`));
 ```
 테이블 생성
-```sql
+```mysql
 ALTER TABLE request
 ADD FOREIGN KEY (tutee_id) REFERENCES account(account_id);
 ALTER TABLE introduce
@@ -153,3 +153,12 @@ ADD FOREIGN KEY (tutor_id) REFERENCES account(account_id);
 페이스북이나 트위터 같은 SNS를 참고하여 디자인 하려고 합니다.
 
 SNS에서 사람들이 올리는 글을 각각 선생님, 학생들이 올린 글이라고 생각해본다면, 제가 만들려는 서비스와 비슷한 구조를 가지고 있다고 생각합니다.
+
+### 아니 이메일
+
+로그인 페이지를 만들다 비밀번호 찾기기능을 위해서는 사용자의 이메일을 알고 있어야 한다는 것을 깨달았습니다.
+
+```mysql
+ALTER TABLE account ADD `email` VARCHAR(100) NULL;
+```
+
